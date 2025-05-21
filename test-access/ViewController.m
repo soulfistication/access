@@ -44,7 +44,7 @@
     mailNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Mail"
                                                       image:[UIImage systemImageNamed:@"envelope.fill"]
                                               selectedImage:[UIImage systemImageNamed:@"envelope.fill"]];
-    mailNav.tabBarItem.badgeValue = @"2";
+    mailNav.tabBarItem.badgeValue = @"1";
     
     settingsNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Settings"
                                                           image:[UIImage systemImageNamed:@"gear"]
