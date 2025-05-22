@@ -17,6 +17,8 @@
 
 @implementation ViewController
 
+#pragma mark - UIViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,6 +26,8 @@
     
     [self setupTabController];
 }
+
+#pragma mark - Helpers
 
 - (void)setupTabController {
     // Create view controllers
@@ -62,6 +66,24 @@
     [self addChildViewController:tabBarController];
     
     [self.navigationController pushViewController:tabBarController animated:YES];
+}
+
+#pragma mark - UIAccessibility
+
+- (nullable NSString *)accessibilityLabel {
+    NSString *badgeText = self.title;
+    
+    if (badgeText == nil || [badgeText isEqualToString:@""]) {
+        return [super accessibilityLabel];
+    }
+
+    
+    if ([badgeText isEqualToString:@"1"]) {
+        return [NSString stringWithFormat:@"%@ item on tab: %@", badgeText, self.title];
+    } else {
+        return [NSString stringWithFormat:@"%@ items on tab: %@", badgeText, self.title];
+    }
+    
 }
 
 @end
